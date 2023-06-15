@@ -34,7 +34,10 @@ function my_plugin_check_for_updates($transient) {
         return $transient;
     }
 
-    $response = wp_remote_get('https://api.github.com/repos/AlexisRqs/last-login-widget/releases');
+    $response = wp_remote_get('https://api.github.com/repos/username/repo/releases');
+
+    // Log the response
+    error_log(print_r($response, true));
 
     if (is_wp_error($response)) {
         return $transient;
@@ -52,6 +55,10 @@ function my_plugin_check_for_updates($transient) {
         $transient->response['last-login-widget/last-login-widget.php'] = $obj;
     }
 
+    // Log the transient
+    error_log(print_r($transient, true));
+
     return $transient;
 }
 add_filter('pre_set_site_transient_update_plugins', 'my_plugin_check_for_updates');
+
