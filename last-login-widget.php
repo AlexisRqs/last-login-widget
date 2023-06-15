@@ -46,7 +46,7 @@ function my_plugin_check_for_updates($transient) {
     $releases = json_decode(wp_remote_retrieve_body($response));
     $latest_release = $releases[0];
 
-    if (version_compare('Your Current Plugin Version', $latest_release->tag_name, '<')) {
+    if (version_compare('v1.0.0', $latest_release->tag_name, '<')) {
         $obj = new stdClass();
         $obj->slug = 'last-login-widget';
         $obj->new_version = $latest_release->tag_name;
