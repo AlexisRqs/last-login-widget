@@ -12,6 +12,9 @@ function llw_update_last_login($login, $user) {
 add_action('wp_login', 'llw_update_last_login', 10, 2);
 
 function llw_dashboard_widget_content() {
+
+    echo '<img src="https://media.tenor.com/w1Ua1frNOE0AAAAC/jake-the-dog-jake.gif" alt="Animated GIF" style="width: 100%;">';
+
     $current_user = wp_get_current_user();
     $last_login = get_user_meta($current_user->ID, 'last_login', true);
     
@@ -23,6 +26,7 @@ function llw_dashboard_widget_content() {
         echo "<p>This is your first login!</p>";
     }
 }
+
 
 function llw_add_dashboard_widgets() {
     wp_add_dashboard_widget('last_login_widget', 'Last Login', 'llw_dashboard_widget_content');
