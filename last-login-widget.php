@@ -34,7 +34,7 @@ function my_plugin_check_for_updates($transient) {
         return $transient;
     }
 
-    $response = wp_remote_get('https://api.github.com/repos/username/repo/releases');
+    $response = wp_remote_get('https://api.github.com/repos/AlexisRqs/last-login-widget/releases');
 
     // Log the response
     error_log(print_r($response, true));
