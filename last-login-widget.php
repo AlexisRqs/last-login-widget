@@ -2,7 +2,7 @@
 /*
 Plugin Name: Last Login Widget
 Description: Adds a dashboard widget showing the current user's name and last login time
-Version: 1.0
+Version: 0.1
 Author: Alexis Roques
 */
 
@@ -34,7 +34,7 @@ function my_plugin_check_for_updates($transient) {
         return $transient;
     }
 
-    $response = wp_remote_get('https://api.github.com/repos/username/repo/releases');
+    $response = wp_remote_get('https://api.github.com/repos/AlexisRqs/last-login-widget/releases');
 
     if (is_wp_error($response)) {
         return $transient;
