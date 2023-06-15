@@ -2,7 +2,7 @@
 /*
 Plugin Name: Last Login Widget
 Description: Adds a dashboard widget showing the current user's name and last login time
-Version: 1.0.0
+Version: 1.1.0
 Author: Alexis Roques
 */
 
